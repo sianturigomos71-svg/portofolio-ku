@@ -487,9 +487,6 @@ button:active {
 
 .hero h1 .char {
     display: inline-block;
-    opacity: 0;
-    transform: translateY(50px) rotateX(-90deg);
-    animation: charReveal 0.8s ease forwards;
 }
 
 .hero h2 {
@@ -501,9 +498,6 @@ button:active {
 
 .hero h2 .word {
     display: inline-block;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: wordReveal 0.6s ease forwards;
 }
 
 .hero h3 {
@@ -511,22 +505,6 @@ button:active {
     font-size: 2rem;
     margin-bottom: 2rem;
     font-weight: 400;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes charReveal {
-    to {
-        opacity: 1;
-        transform: translateY(0) rotateX(0);
-    }
-}
-
-@keyframes wordReveal {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @keyframes fadeInUp {
@@ -610,8 +588,6 @@ button:active {
 /* Cards */
 .card {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border-radius: 24px;
     padding: 2.5rem;
     box-shadow: var(--shadow-soft);
@@ -1308,8 +1284,6 @@ button:active {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 999;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 .header-content {
@@ -1511,14 +1485,7 @@ button:active {
 
 /* Scroll Reveal */
 .reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-}
-
-.reveal.active {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* Smooth Scroll */
@@ -1719,8 +1686,6 @@ html {
 /* Navigation */
 .navbar {
     background: var(--bg-glass);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0, 255, 136, 0.2);
     position: fixed;
     top: 0;
@@ -1904,7 +1869,6 @@ html {
 
 .profile-card {
     background: var(--bg-glass);
-    backdrop-filter: blur(10px);
     border: 2px solid rgba(0, 255, 136, 0.3);
     border-radius: 24px;
     padding: 3rem;
@@ -1970,7 +1934,6 @@ html {
     background: transparent;
     color: var(--primary);
     border: 2px solid var(--primary);
-    backdrop-filter: blur(10px);
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -2024,8 +1987,6 @@ html {
 
 .profile-card {
     background: rgba(30, 58, 138, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--primary);
     border-radius: 24px;
     padding: 2.5rem;
@@ -2105,7 +2066,6 @@ html {
     justify-content: center;
     text-decoration: none;
     transition: var(--transition-smooth);
-    backdrop-filter: blur(10px);
     border: 1px solid var(--primary);
 }
 

@@ -269,25 +269,6 @@ tabBtns.forEach(btn => {
     });
 });
 
-// Scroll Reveal Animations
-const revealElements = document.querySelectorAll('.reveal');
-
-const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    const elementVisible = 150;
-    
-    revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('active');
-        }
-    });
-};
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-
 // Scroll Spy Navigation for Sidebar
 const sections = document.querySelectorAll('section');
 const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
