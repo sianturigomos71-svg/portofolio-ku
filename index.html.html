@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portofolio PPG Prajabatan - Gomos Andreas Sianturi, S.Pd.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-content">
+            <div class="loader-logos">
+                <img src="images 3.png" alt="Logo Universitas Negeri Medan" class="loader-logo-single">
+            </div>
+            <div class="loader-percentage">0%</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <!-- Hamburger Button -->
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="#home" class="header-logo">
+                <span class="logo-main">PPG</span>
+                <span class="logo-divider"></span>
+                <span class="logo-sub">Pendidikan Profesi Guru</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="sidebar-logo">
+            <div class="logo-content">
+                <span class="logo-main">PPG</span>
+                <span class="logo-divider"></span>
+                <span class="logo-sub">Pendidikan Profesi Guru</span>
+            </div>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item active">
+                <a href="#home" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#kata-pengantar" class="nav-link">
+                    <i class="fas fa-book-open"></i>
+                    <span>KATA PENGANTAR</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#profil" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    <span>PROFIL MAHASISWA</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#daerah" class="nav-link">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>DAERAH ASAL</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#kampus" class="nav-link">
+                    <i class="fas fa-university"></i>
+                    <span>KAMPUS LPTK</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#sekolah" class="nav-link">
+                    <i class="fas fa-school"></i>
+                    <span>SEKOLAH PPL</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#inspirasi" class="nav-link">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>INSPIRASI MENJADI GURU</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#tujuan" class="nav-link">
+                    <i class="fas fa-bullseye"></i>
+                    <span>TUJUAN MENJADI GURU</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#artefak" class="nav-link">
+                    <i class="fas fa-folder-open"></i>
+                    <span>ARTEFAK PPL</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#lampiran" class="nav-link">
+                    <i class="fas fa-paperclip"></i>
+                    <span>LAMPIRAN</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#model-guru" class="nav-link">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>MODEL GURU</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#refleksi" class="nav-link">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>REFLEKSI AKHIR</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#filosofi" class="nav-link">
+                    <i class="fas fa-brain"></i>
+                    <span>FILOSOFI MENGAJAR</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#terimakasih" class="nav-link">
+                    <i class="fas fa-heart"></i>
+                    <span>UCAPAN TERIMA KASIH</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#contact" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>KONTAK</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- PDF Modal -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <span class="pdf-modal-close">&times;</span>
+            <iframe id="pdfFrame" class="pdf-frame"></iframe>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal">
+        <div class="gallery-modal-content">
+            <span class="gallery-modal-close">&times;</span>
+            <button class="gallery-nav gallery-prev">&lt;</button>
+            <img id="galleryImage" class="gallery-image" src="" alt="Gallery Image" />
+            <button class="gallery-nav gallery-next">&gt;</button>
+            <div class="gallery-counter"></div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="edu-elements">
+            <div class="edu-icon edu-book"><i class="fas fa-book"></i></div>
+            <div class="edu-icon edu-graduation"><i class="fas fa-graduation-cap"></i></div>
+            <div class="edu-icon edu-pencil"><i class="fas fa-pencil-alt"></i></div>
+            <div class="edu-icon edu-lightbulb"><i class="fas fa-lightbulb"></i></div>
+            <div class="edu-icon edu-chalkboard"><i class="fas fa-chalkboard-teacher"></i></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">WELCOME TO MY PORTFOLIO</h1>
+                <h2 class="fade-in fade-in-delay-1">Gomos Andreas Sianturi, S.Pd.</h2>
+                <h3 class="fade-in fade-in-delay-2">Calon Guru PJOK</h3>
+                <p class="hero-tagline fade-in fade-in-delay-3">"Mewujudkan pembelajaran inovatif untuk membentuk generasi yang sehat, aktif, dan berkarakter."</p>
+                <div class="hero-buttons fade-in fade-in-delay-4">
+                    <a href="#kata-pengantar" class="btn btn-primary">Lihat portofolio</a>
+                    <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kata Pengantar Section -->
+    <section id="kata-pengantar" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Kata Pengantar</h2>
+            <p class="section-subtitle">Perjalanan Profesional Menuju Guru yang Kompeten</p>
+            <div class="card">
+                <div class="card-edu-pattern"><i class="fas fa-book-open"></i></div>
+                <p>Portofolio ini merupakan dokumentasi perjalanan profesional saya selama mengikuti Program Pendidikan Profesi Guru (PPG) Prajabatan. Melalui portofolio ini, saya ingin menunjukkan perkembangan kompetensi pedagogik, profesional, sosial, dan kepribadian yang telah saya capai selama program berlangsung.</p>
+                <p>Sebagai calon guru Pendidikan Jasmani, Kesehatan, dan Rekreasi (PJOK), saya percaya bahwa pendidikan jasmani bukan hanya tentang mengembangkan kemampuan fisik siswa, tetapi juga membentuk karakter, disiplin, dan nilai-nilai kehidupan yang akan berguna sepanjang hayat mereka.</p>
+                <p>Portofolio ini mencakup berbagai artefak pembelajaran, refleksi praktik mengajar, analisis pembelajaran, serta bukti-bukti kompetensi yang telah saya kembangkan. Semoga portofolio ini dapat memberikan gambaran yang komprehensif mengenai kesiapan saya untuk menjadi guru profesional yang berkualitas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil Mahasiswa Section -->
+    <section id="profil" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Profil Mahasiswa</h2>
+            <p class="section-subtitle">Mengenal Saya Lebih Dekat</p>
+            <div class="profile-photo-container">
+                <div class="profile-photo">
+                    <img src="foto-profil.jpg" alt="Foto Profil Gomos Andreas Sianturi">
+                </div>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-edu-pattern"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Informasi Pribadi</h3>
+                    <p><strong>Nama:</strong> Gomos Andreas Sianturi, S.Pd.</p>
+                    <p><strong>Tempat, Tanggal Lahir:</strong> Lae Parira, 1 April 2001</p>
+                    <p><strong>Asal Daerah:</strong> Sidikalang, Kabupaten Dairi, Sumatera Utara</p>
+                    <p><strong>Pendidikan Terakhir:</strong> S1 Pendidikan Jasmani, Kesehatan, dan Rekreasi (PJKR) Universitas Negeri Medan</p>
+                    <p><strong>Program Saat Ini:</strong> Pendidikan Profesi Guru (PPG)</p>
+                </div>
+                <div class="card">
+                    <div class="card-edu-pattern"><i class="fas fa-scroll"></i></div>
+                    <h3>Biografi Singkat</h3>
+                    <p>Saya adalah seorang pendidik yang berdedikasi untuk mengembangkan kompetensi profesional sebagai guru PJOK. Lahir dan besar di Kabupaten Dairi, saya memiliki semangat untuk memberikan kontribusi nyata bagi kemajuan pendidikan di Indonesia, khususnya di bidang pendidikan jasmani.</p>
+                    <p>Di waktu luang, saya memiliki hobi berenang yang membantu menjaga kesehatan fisik dan mental saya. Hobi ini juga menjadi inspirasi dalam mengembangkan metode pembelajaran yang menarik bagi siswa.</p>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 2rem;">
+                <div class="card-edu-pattern"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Riwayat Pendidikan</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2019 - 2024</div>
+                        <div class="timeline-title">S1 Pendidikan Jasmani, Kesehatan, dan Rekreasi (PJKR)</div>
+                        <p>Universitas Negeri Medan</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2016 - 2019</div>
+                        <div class="timeline-title">SMA Negeri Lae Parira</div>
+                        <p>Kabupaten Dairi, Sumatera Utara</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2013 - 2016</div>
+                        <div class="timeline-title">SMP Negeri Lae Parira</div>
+                        <p>Kabupaten Dairi, Sumatera Utara</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2007 - 2013</div>
+                        <div class="timeline-title">SD Negeri Lae Parira</div>
+                        <p>Kabupaten Dairi, Sumatera Utara</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daerah Asal Section -->
+    <section id="daerah" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Daerah Asal</h2>
+            <p class="section-subtitle">Kabupaten Dairi - Tanah Pakpak yang Kaya Budaya</p>
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-edu-pattern"><i class="fas fa-home"></i></div>
+                <h3>Rumah Adat Pakpak</h3>
+                <p>Rumah adat tradisional suku Pakpak di Kabupaten Dairi yang memiliki arsitektur unik dengan atap tinggi dan dinding kayu. Rumah ini mencerminkan kearifan lokal dan filosofi hidup masyarakat Pakpak yang menjunjung tinggi nilai kebersamaan dan harmoni dengan alam.</p>
+            </div>
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-edu-pattern"><i class="fas fa-music"></i></div>
+                <h3>Pesta Njuah-Njuah</h3>
+                <p>Tradisi budaya tahunan masyarakat Pakpak yang dirayakan sebagai ungkapan syukur atas hasil panen. Pesta ini melibatkan berbagai aktivitas seperti tarian tradisional, musik daerah, dan hidangan khas yang mempererat kebersamaan antar warga dan melestarikan warisan budaya leluhur.</p>
+            </div>
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-edu-pattern"><i class="fas fa-coffee"></i></div>
+                <h3>Kopi Sidikalang</h3>
+                <p>Kopi robusta premium dari dataran tinggi Sidikalang, Kabupaten Dairi yang terkenal dengan kualitasnya yang mendunia. Ditanam di ketinggian 1.000-1.500 meter di atas permukaan laut, kopi ini memiliki karakter rasa yang kuat dengan aroma khas yang menjadi kebanggaan petani lokal dan komoditas ekspor unggulan.</p>
+            </div>
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-edu-pattern"><i class="fas fa-water"></i></div>
+                <h3>Danau Toba</h3>
+                <p>Danau vulkanik terbesar di dunia yang terletak di Sumatera Utara, menjadi keajaiban alam yang memukau. Danau seluas 1.707 km² ini memiliki Pulau Samosir di tengahnya dan menjadi destinasi wisata terkenal serta habitat ekosistem yang kaya. Bagi masyarakat Dairi, Danau Toba juga memiliki nilai sejarah dan spiritual yang mendalam.</p>
+            </div>
+            <div class="card-grid">
+                <div class="cultural-card">
+                    <img src="foto-daerah.jpg" alt="Rumah Adat Pakpak">
+                    <div class="cultural-card-content">
+                        <div class="cultural-card-title">Rumah Adat Pakpak</div>
+                    </div>
+                </div>
+                <div class="cultural-card">
+                    <img src="foto-daerah-icon.jpg" alt="Pesta Njuah-Njuah">
+                    <div class="cultural-card-content">
+                        <div class="cultural-card-title">Pesta Njuah-Njuah</div>
+                    </div>
+                </div>
+                <div class="cultural-card">
+                    <img src="Kopi_Robusta_Sidikalang.jpg" alt="Kopi Sidikalang">
+                    <div class="cultural-card-content">
+                        <div class="cultural-card-title">Kopi Sidikalang</div>
+                    </div>
+                </div>
+                <div class="cultural-card">
+                    <img src="foto-daerah-3.jpg" alt="Danau Toba">
+                    <div class="cultural-card-content">
+                        <div class="cultural-card-title">Danau Toba</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kampus LPTK Section -->
+    <section id="kampus" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Kampus LPTK</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-edu-pattern"><i class="fas fa-university"></i></div>
+                    <h3>Informasi Kampus</h3>
+                    <p>Kampus LPTK tempat saya mengikuti Program PPG Prajabatan adalah institusi pendidikan yang berdedikasi untuk mencetak guru-guru profesional berkualitas.</p>
+                    <p>Di kampus ini, saya mendapatkan pembinaan intensif dalam berbagai aspek kompetensi pedagogik, profesional, sosial, dan kepribadian. Fasilitas yang tersedia sangat mendukung proses pembelajaran dan pengembangan diri.</p>
+                    <p>Dosen-dosen pengampu sangat berpengalaman dan memberikan bimbingan yang komprehensif untuk mempersiapkan kami menjadi guru yang kompeten dan siap mengabdi di dunia pendidikan.</p>
+                    <div class="info-item" style="margin-top: 1.5rem;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Alamat Kampus</h4>
+                            <p>Universitas Negeri Medan, Jl. William Iskandar Ps. V, Kenangan Baru, Kec. Percut Sei Tuan, Kabupaten Deli Serdang, Sumatera Utara 20221</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-edu-pattern"><i class="fas fa-camera"></i></div>
+                    <h4>Foto Kampus</h4>
+                    <div class="photo-display">
+                        <img src="WhatsApp Image 2026-06-10 at 15.14.20.jpeg" alt="Foto Kampus LPTK">
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 2rem;">
+                <h4><i class="fas fa-map"></i> Lokasi Kampus</h4>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.123456789!2d98.7171107!3d3.6061674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031316e689bce4b%3A0x7700b98ba515523d!2sUniversitas+Negeri+Medan!5e0!3m2!1sid!2sid!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekolah PPL Section -->
+    <section id="sekolah" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Sekolah PPL</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-edu-pattern"><i class="fas fa-school"></i></div>
+                    <h3>Informasi Sekolah</h3>
+                    <p>Sekolah tempat saya melaksanakan Program Pengalaman Lapangan (PPL) adalah SMP Negeri 1 Medan, sekolah yang memiliki reputasi baik dalam mencetak siswa-siswi berkualitas.</p>
+                    <p>Di sekolah ini, saya mendapatkan kesempatan untuk mengaplikasikan teori yang telah dipelajari dalam praktik nyata pembelajaran di kelas. Guru-guru pembimbing sangat membimbing dan memberikan masukan yang berharga.</p>
+                    <p>Siswa-siswi di sekolah ini sangat antusias dan aktif dalam kegiatan pembelajaran, yang membuat pengalaman PPL menjadi sangat berkesan dan bermanfaat.</p>
+                    <div class="info-item" style="margin-top: 1.5rem;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Alamat Sekolah</h4>
+                            <p>SMP Negeri 1 Medan, Jl. Bunga Asoka No.10, Asam Kumbang, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20128</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-edu-pattern"><i class="fas fa-camera"></i></div>
+                    <h4>Foto Sekolah</h4>
+                    <div class="photo-display">
+                        <img src="WhatsApp Image 2026-06-10 at 15.26.57 (1).jpeg" alt="Foto Sekolah PPL">
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 2rem;">
+                <h4><i class="fas fa-map"></i> Lokasi Sekolah</h4>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.123456789!2d98.6186343!3d3.5637983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312fa0fe80eee3%3A0x2570c18e2e1e25cc!2sUPT+SMP+Negeri+1+Medan!5e0!3m2!1sid!2sid!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inspirasi Menjadi Guru Section -->
+    <section id="inspirasi" class="quote-section reveal">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Inspirasi Menjadi Guru</h2>
+            <div class="card" style="margin-top: 2rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <p style="color: white;">Perjalanan saya menjadi seorang guru lahir dari doa dan perjuangan orang tua saya, terkhusus ibu yang selalu mengajarkan arti kesabaran, kerja keras, dan ketulusan dalam mendidik. Dari beliau, saya belajar bahwa pendidikan bukan hanya tentang ilmu, tetapi juga tentang kasih sayang dan pengorbanan. Selain itu, guru PJOK saya saat SMA menjadi sosok yang menginspirasi saya untuk percaya diri, disiplin, dan tidak mudah menyerah. Cara beliau mengajar dengan semangat dan kepedulian membuat saya sadar bahwa seorang guru mampu memberikan pengaruh besar dalam kehidupan peserta didik. Karena itulah, saya ingin menjadi guru yang bukan hanya mengajar, tetapi juga mampu menginspirasi dan memberi makna bagi setiap siswa.</p>
+            </div>
+            <p class="quote-text" style="margin-top: 3rem;">"Pendidikan bukan tentang mengisi wadah, tetapi menyalakan api."</p>
+            <p class="quote-author">- William Butler Yeats</p>
+            <div class="card" style="margin-top: 2rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <p style="color: white;">Inspirasi saya untuk menjadi guru berawal dari pengalaman pribadi melihat bagaimana pendidikan dapat mengubah hidup seseorang. Guru-guru di kampung halaman saya telah menjadi teladan yang menunjukkan bahwa pendidikan adalah kunci untuk membuka peluang dan mewujudkan mimpi.</p>
+                <p style="color: white;">Saya percaya bahwa setiap anak berhak mendapatkan pendidikan terbaik, dan sebagai guru, saya ingin menjadi jembatan yang menghubungkan mereka dengan masa depan yang lebih cerah. Melalui pendidikan jasmani, saya ingin mengajarkan bahwa kesehatan fisik adalah fondasi penting untuk mencapai potensi maksimal dalam hidup.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tujuan Menjadi Guru Section -->
+    <section id="tujuan" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Tujuan Menjadi Guru</h2>
+            <p class="section-subtitle">Visi dan Misi Profesional</p>
+            <div class="card-grid">
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                    <h3 class="feature-title">Mendidik dengan Hati</h3>
+                    <p>Menjadi guru yang tidak hanya mengajar, tetapi juga menginspirasi dan membentuk karakter siswa.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3 class="feature-title">Mengembangkan Karakter</h3>
+                    <p>Membentuk siswa yang tidak hanya cerdas secara akademik, tetapi juga memiliki moral yang baik.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-star"></i></div>
+                    <h3 class="feature-title">Menjadi Teladan</h3>
+                    <p>Menjadi contoh nyata bagi siswa dalam perilaku, sikap, dan semangat belajar.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="feature-title">Pembelajaran Inovatif</h3>
+                    <p>Menciptakan metode pembelajaran yang kreatif dan menarik untuk PJOK.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-laptop"></i></div>
+                    <h3 class="feature-title">Teknologi Pendidikan</h3>
+                    <p>Memanfaatkan teknologi modern untuk meningkatkan kualitas pembelajaran.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="feature-title">Kontribusi Nyata</h3>
+                    <p>Memberikan kontribusi bagi kemajuan pendidikan di Indonesia, khususnya di daerah terpencil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artefak PPL Section -->
+    <section id="artefak" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Artefak Produk Portofolio PPL</h2>
+            <p class="section-subtitle">Dokumentasi Pembelajaran dan Pengembangan Kompetensi</p>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="siklus1">Siklus I</button>
+                <button class="tab-btn" data-tab="siklus2">Siklus II</button>
+                <button class="tab-btn" data-tab="siklus3">Siklus III</button>
+            </div>
+            
+            <div class="tab-content active" id="siklus1">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-book"></i></div>
+                        <h3>Modul Pembelajaran</h3>
+                        <div class="pdf-preview">
+                            <img src="cover modul 1.png" alt="Cover Modul Pembelajaran" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Siklus 1 (1).pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-file-alt"></i></div>
+                        <h3>LKPD</h3>
+                        <div class="pdf-preview">
+                            <img src="cover LKPD.png" alt="Cover LKPD" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Siklus 1 (2).pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-camera"></i></div>
+                        <h3>Dokumentasi</h3>
+                        <div class="pdf-preview">
+                            <img src="cover dokumentasi.png" alt="Cover Dokumentasi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openGalleryModal(['Dokumentasi Siklus1 (1).jpeg', 'Dokumentasi Siklus1 (2).jpeg', 'Dokumentasi Siklus1 (3).jpeg', 'Dokumentasi Siklus1 (4).jpeg'])" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Lihat Dokumentasi</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-chart-line"></i></div>
+                        <h3>Hasil Analisis</h3>
+                        <div class="pdf-preview">
+                            <img src="cover analisis.png" alt="Cover Hasil Analisis" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Hasil Analisis Siklus 1.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="siklus2">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-book"></i></div>
+                        <h3>Modul Pembelajaran</h3>
+                        <div class="pdf-preview">
+                            <img src="Cover lompat jauh.png" alt="Cover Modul Pembelajaran" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Modul ajar siklus 2 (1).pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-file-alt"></i></div>
+                        <h3>LKPD</h3>
+                        <div class="pdf-preview">
+                            <img src="cover LKPD.png" alt="Cover LKPD" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('LKPD Siklus 2.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-camera"></i></div>
+                        <h3>Dokumentasi</h3>
+                        <div class="pdf-preview">
+                            <img src="cover dokumentasi.png" alt="Cover Dokumentasi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openGalleryModal(['Dokumentasi Siklus 2 (1).jpeg', 'Dokumentasi Siklus 2 (2).jpeg', 'Dokumentasi Siklus 2 (3).jpeg'])" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Lihat Dokumentasi</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-chart-line"></i></div>
+                        <h3>Hasil Analisis</h3>
+                        <div class="pdf-preview">
+                            <img src="cover analisis.png" alt="Cover Hasil Analisis" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Hasil Analisis Siklus 2.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="siklus3">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-book"></i></div>
+                        <h3>Modul Pembelajaran</h3>
+                        <div class="pdf-preview">
+                            <img src="Cover senam berirama.png" alt="Cover Modul Pembelajaran" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('LKPD Siklus 3 (1).pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-file-alt"></i></div>
+                        <h3>LKPD</h3>
+                        <div class="pdf-preview">
+                            <img src="cover LKPD.png" alt="Cover LKPD" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('LKPD Siklus 3 (2).pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-camera"></i></div>
+                        <h3>Dokumentasi</h3>
+                        <div class="pdf-preview">
+                            <img src="cover dokumentasi.png" alt="Cover Dokumentasi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openGalleryModal(['Dokumentasi Siklus 3 (1).jpeg', 'Dokumentasi Siklus 3 (2).jpeg', 'Dokumentasi Siklus 3 (3).jpeg'])" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Lihat Dokumentasi</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-chart-line"></i></div>
+                        <h3>Hasil Analisis</h3>
+                        <div class="pdf-preview">
+                            <img src="cover analisis.png" alt="Cover Hasil Analisis" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Hasil Analisis Siklus 3.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lampiran Section -->
+    <section id="lampiran" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Lampiran</h2>
+            <p class="section-subtitle">Dokumen Pendukung dan Bukti Kompetensi</p>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="lampiran-siklus1">Siklus I</button>
+                <button class="tab-btn" data-tab="lampiran-siklus2">Siklus II</button>
+                <button class="tab-btn" data-tab="lampiran-siklus3">Siklus III</button>
+            </div>
+
+            <div class="tab-content active" id="lampiran-siklus1">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-file-alt"></i></div>
+                        <h3>Lampiran 7</h3>
+                        <div class="pdf-preview">
+                            <img src="Cover Lampiran.png" alt="Cover Lampiran 7" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Lampiran 7 Siklus 1.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-file-alt"></i></div>
+                        <h3>Lampiran 8</h3>
+                        <div class="pdf-preview">
+                            <img src="Cover Lampiran.png" alt="Cover Lampiran 8" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Lampiran 8 Siklus 1.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="lampiran-siklus2">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-file-alt"></i></div>
+                        <h3>Lampiran 7</h3>
+                        <div class="pdf-preview">
+                            <img src="Cover Lampiran.png" alt="Cover Lampiran 7" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Lampiran 7 siklus 2.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-file-alt"></i></div>
+                        <h3>Lampiran 8</h3>
+                        <div class="pdf-preview">
+                            <img src="Cover Lampiran.png" alt="Cover Lampiran 8" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('lampiran 8 siklus 2.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="lampiran-siklus3">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-file-alt"></i></div>
+                        <h3>Lampiran 7</h3>
+                        <div class="pdf-preview">
+                            <img src="Cover Lampiran.png" alt="Cover Lampiran 7" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Lampiran 7 Siklus 3.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-edu-pattern"><i class="fas fa-file-alt"></i></div>
+                        <h3>Lampiran 8</h3>
+                        <div class="pdf-preview">
+                            <img src="Cover Lampiran.png" alt="Cover Lampiran 8" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);" />
+                            <button onclick="openPdfModal('Lampiran 8 Silus 3.pdf')" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">Buka PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model Guru Section -->
+    <section id="model-guru" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Model Guru yang Dituju</h2>
+            <p class="section-subtitle">Visi dan Misi Profesional sebagai Guru PJOK</p>
+            <div class="vision-mission">
+                <div class="vision-box">
+                    <h3 style="color: white;">Visi</h3>
+                    <p style="color: white; font-size: 1.3rem; margin-top: 1rem;">Menjadi guru PJOK yang profesional, inspiratif, inovatif, dan berkarakter, mampu menciptakan pembelajaran yang menyenangkan dan bermakna bagi setiap siswa.</p>
+                </div>
+                <div class="mission-box">
+                    <h3>Misi</h3>
+                    <ul class="mission-list">
+                        <li>Mendidik dengan hati dan kasih sayang kepada setiap siswa</li>
+                        <li>Mengembangkan karakter dan nilai-nilai kehidupan melalui pendidikan jasmani</li>
+                        <li>Menjadi teladan dalam perilaku, sikap, dan semangat belajar</li>
+                        <li>Menciptakan pembelajaran aktif, kreatif, dan menyenangkan</li>
+                        <li>Memanfaatkan teknologi pendidikan untuk meningkatkan kualitas pembelajaran</li>
+                        <li>Berkontribusi bagi kemajuan pendidikan di Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Refleksi Akhir Section -->
+    <section id="refleksi" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Refleksi Akhir</h2>
+            <p class="section-subtitle">Evaluasi dan Perbaikan Berkelanjutan</p>
+            <div class="card expandable-card" onclick="this.classList.toggle('active')">
+                <div class="expandable-card-header">
+                    <h3>Pembelajaran dan Pengembangan Kompetensi</h3>
+                    <i class="fas fa-chevron-down expandable-icon"></i>
+                </div>
+                <div class="expandable-card-content">
+                    <p>Selama mengikuti Program PPG Prajabatan, saya telah mempelajari berbagai aspek penting dalam pembelajaran. Kompetensi pedagogik yang saya kembangkan mencakup perencanaan pembelajaran, pelaksanaan pembelajaran, penilaian, dan refleksi. Saya belajar bahwa pembelajaran yang efektif harus berpusat pada siswa (student-centered learning) dan mempertimbangkan kebutuhan serta karakteristik setiap siswa.</p>
+                    <p>Pengembangan kompetensi profesional juga menjadi fokus utama. Saya memperdalam pengetahuan tentang materi PJOK, metodologi pembelajaran yang inovatif, serta pemanfaatan teknologi dalam pembelajaran. Kompetensi sosial dan kepribadian juga saya kembangkan melalui interaksi dengan dosen, sesama peserta PPG, dan praktik lapangan di sekolah.</p>
+                </div>
+            </div>
+            <div class="card expandable-card" onclick="this.classList.toggle('active')">
+                <div class="expandable-card-header">
+                    <h3>Tantangan dan Strategi Penyelesaian</h3>
+                    <i class="fas fa-chevron-down expandable-icon"></i>
+                </div>
+                <div class="expandable-card-content">
+                    <p>Salah satu tantangan yang saya hadapi adalah mengelola kelas dengan berbagai karakteristik siswa yang berbeda. Untuk mengatasi ini, saya menerapkan pendekatan pembelajaran diferensiasi dan membangun hubungan yang baik dengan setiap siswa. Tantangan lain adalah keterbatasan fasilitas olahraga di sekolah, yang saya atasi dengan kreativitas dalam memanfaatkan ruang yang tersedia dan mengadaptasi kegiatan sesuai kondisi.</p>
+                    <p>Dalam aspek teknologi, saya menghadapi tantangan dalam mengintegrasikan teknologi ke dalam pembelajaran PJOK. Saya mengatasinya dengan mengikuti pelatihan, belajar mandiri, dan berkolaborasi dengan rekan sejawat untuk berbagi praktik terbaik.</p>
+                </div>
+            </div>
+            <div class="card expandable-card" onclick="this.classList.toggle('active')">
+                <div class="expandable-card-header">
+                    <h3>Umpan Balik dan Rencana Perbaikan</h3>
+                    <i class="fas fa-chevron-down expandable-icon"></i>
+                </div>
+                <div class="expandable-card-content">
+                    <p>Berdasarkan umpan balik dari dosen pembimbing, guru pamong, dan rekan sejawat, saya menyadari bahwa masih banyak area yang perlu ditingkatkan. Umpan balik positif yang saya terima antara lain kemampuan dalam membangun hubungan dengan siswa dan semangat belajar yang tinggi. Area perbaikan yang perlu diperhatikan meliputi manajemen waktu dalam pembelajaran dan variasi metode pembelajaran.</p>
+                    <p>Rencana perbaikan saya ke depan meliputi: mengikuti pelatihan tambahan untuk meningkatkan kompetensi profesional, membaca literatur terbaru tentang pendidikan jasmani, dan terus melakukan refleksi setiap pembelajaran untuk perbaikan berkelanjutan. Saya juga berencana untuk membangun jaringan profesional dengan guru-guru PJOK lain untuk berbagi praktik terbaik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filosofi Mengajar Section -->
+    <section id="filosofi" class="philosophy-section reveal">
+        <div class="container">
+            <h2 class="section-title">Filosofi Mengajar</h2>
+            <p class="section-subtitle">Pandangan dan Prinsip Pendidikan</p>
+            <div class="philosophy-highlight">
+                "Ing Ngarsa Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri Handayani"
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">Filosofi Ki Hajar Dewantara ini menjadi pegangan dalam praktik mengajar saya. Sebagai guru, saya harus menjadi teladan di depan (Ing Ngarsa Sung Tuladha), memberikan motivasi dan inisiatif di tengah (Ing Madya Mangun Karsa), dan memberikan dukungan dan arahan di belakang (Tut Wuri Handayani).</p>
+            <div class="philosophy-topics">
+                <div class="philosophy-topic">
+                    <h3>Student Centered Learning</h3>
+                    <p>Pembelajaran yang berpusat pada siswa, mengakomodasi kebutuhan dan karakteristik individual setiap peserta didik.</p>
+                </div>
+                <div class="philosophy-topic">
+                    <h3>Deep Learning</h3>
+                    <p>Pembelajaran mendalam yang mengembangkan pemahaman konseptual, bukan sekadar menghafal fakta.</p>
+                </div>
+                <div class="philosophy-topic">
+                    <h3>Konstruktivisme</h3>
+                    <p>Siswa membangun pengetahuan sendiri melalui pengalaman dan refleksi, bukan sekadar menerima informasi.</p>
+                </div>
+                <div class="philosophy-topic">
+                    <h3>Profil Pelajar Pancasila</h3>
+                    <p>Membentuk siswa yang beriman, bertakwa, berakhlak mulia, berkebinekaan global, gotong royong, kreatif, bernalar kritis, dan mandiri.</p>
+                </div>
+                <div class="philosophy-topic">
+                    <h3>Pendidikan Karakter</h3>
+                    <p>Mengintegrasikan nilai-nilai karakter dalam setiap aspek pembelajaran untuk membentuk pribadi yang berkualitas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ucapan Terima Kasih Section -->
+    <section id="terimakasih" class="thank-you-section reveal">
+        <div class="container">
+            <h2>Ucapan Terima Kasih</h2>
+            <p class="thank-you-text">Saya mengucapkan terima kasih yang sebesar-besarnya kepada semua pihak yang telah membantu dan mendukung saya selama mengikuti Program PPG Prajabatan. Terima kasih kepada dosen-dosen pengampu yang telah memberikan bimbingan dan ilmu yang berharga, kepada guru pamong yang telah membimbing saya selama praktik lapangan, kepada rekan-rekan seperjuangan yang telah memberikan dukungan dan motivasi, serta kepada keluarga yang selalu mendoakan dan mendukung perjalanan saya ini.</p>
+            <p class="thank-you-text" style="margin-top: 2rem;">Semoga ilmu dan pengalaman yang saya peroleh dapat bermanfaat bagi kemajuan pendidikan di Indonesia dan menjadi amal jariyah bagi kita semua.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section reveal">
+        <div class="container">
+            <h2 class="section-title">Kontak</h2>
+            <p class="section-subtitle">Hubungi Saya</p>
+            <div class="contact-info">
+                <div class="contact-name">Gomos Andreas Sianturi, S.Pd.</div>
+                <div class="contact-location">Sidikalang, Kabupaten Dairi, Sumatera Utara</div>
+                <div class="social-buttons">
+                    <a href="https://wa.me/6285362856270" class="social-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="mailto:gomossianturi71@gmail.com" class="social-btn email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="#" class="social-btn instagram">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="#" class="social-btn facebook">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                    <a href="#" class="social-btn linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 E-Portofolio PPG Prajabatan - Gomos Andreas Sianturi, S.Pd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

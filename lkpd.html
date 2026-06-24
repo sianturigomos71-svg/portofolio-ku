@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD PJOK - Kelas VIII</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #212121;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            padding: 20mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00796B;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 14pt;
+            color: #00796B;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 10pt;
+            color: #546E7A;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 2px solid #00796B;
+            margin-top: 20px;
+            font-size: 9pt;
+            color: #546E7A;
+        }
+
+        /* Banner */
+        .banner {
+            background: #00796B;
+            color: white;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-size: 16pt;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .banner.orange { background: #E65100; }
+        .banner.purple { background: #6A1B9A; }
+        .banner.blue { background: #1565C0; }
+        .banner.gray { background: #37474F; }
+        .banner.teal-dark { background: #004D40; }
+
+        /* Sub Banner */
+        .sub-banner {
+            background: #E0F2F1;
+            border-left: 5px solid #00796B;
+            padding: 12px 20px;
+            margin: 15px 0;
+            font-size: 13pt;
+            font-weight: bold;
+            color: #00796B;
+        }
+
+        .sub-banner.orange { background: #FFF3E0; border-left-color: #E65100; color: #E65100; }
+        .sub-banner.purple { background: #F3E5F5; border-left-color: #6A1B9A; color: #6A1B9A; }
+        .sub-banner.blue { background: #E3F2FD; border-left-color: #1565C0; color: #1565C0; }
+        .sub-banner.amber { background: #FFF8E1; border-left-color: #F57F17; color: #F57F17; }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        th, td {
+            border: 1px solid #CFD8DC;
+            padding: 8px 12px;
+            vertical-align: top;
+        }
+
+        th {
+            background: #00796B;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        th.orange { background: #E65100; }
+        th.purple { background: #6A1B9A; }
+        th.blue { background: #1565C0; }
+        th.green { background: #2E7D32; }
+        th.gray { background: #37474F; }
+        th.amber { background: #F57F17; }
+
+        tr:nth-child(even) {
+            background: #ECEFF1;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        /* Numbered items */
+        .num-item {
+            margin: 8px 0;
+            padding-left: 10px;
+        }
+
+        /* Callout box */
+        .callout {
+            border: 2px solid #1565C0;
+            margin: 15px 0;
+        }
+
+        .callout-header {
+            background: #1565C0;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        .callout-body {
+            background: #E3F2FD;
+            padding: 15px;
+        }
+
+        /* LKPD Sections */
+        .lkpd-header {
+            background: #6A1B9A;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .lkpd-header h2 {
+            font-size: 18pt;
+            margin-bottom: 10px;
+        }
+
+        .lkpd-header p {
+            font-size: 11pt;
+            color: #FCE4EC;
+        }
+
+        .lkpd-quote {
+            font-style: italic;
+            color: #FFF8E1;
+            margin-top: 10px;
+        }
+
+        .identity-table {
+            margin: 20px 0;
+        }
+
+        .identity-table td {
+            padding: 5px 10px;
+        }
+
+        .identity-table td:first-child {
+            font-weight: bold;
+            color: #6A1B9A;
+            width: 25%;
+        }
+
+        .section-header {
+            background: #00796B;
+            color: white;
+            padding: 10px 15px;
+            margin: 20px 0 15px 0;
+            font-size: 12pt;
+            font-weight: bold;
+        }
+
+        .section-header.orange { background: #E65100; }
+        .section-header.purple { background: #6A1B9A; }
+        .section-header.green { background: #2E7D32; }
+        .section-header.gray { background: #37474F; }
+
+        /* Mood selector */
+        .mood-selector {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .mood-option {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid;
+        }
+
+        .mood-option .emoji {
+            font-size: 32pt;
+            margin-bottom: 5px;
+        }
+
+        .mood-option.happy { background: #C8E6C9; border-color: #2E7D32; }
+        .mood-option.good { background: #E0F2F1; border-color: #00796B; }
+        .mood-option.neutral { background: #ECEFF1; border-color: #546E7A; }
+        .mood-option.low { background: #FFF3E0; border-color: #E65100; }
+        .mood-option.bad { background: #FFCDD2; border-color: #B71C1C; }
+
+        /* Challenge box */
+        .challenge-box {
+            background: #FFF8E1;
+            border: 3px solid #F57F17;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .challenge-box h3 {
+            color: #F57F17;
+            text-align: center;
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+                max-width: 100%;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        .page-break {
+            page-break-before: always;
+            margin-top: 30px;
+        }
+
+        .spacer {
+            height: 20px;
+        }
+
+        .checkbox {
+            margin: 5px 0;
+        }
+
+        .question {
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .answer-line {
+            border-bottom: 1px solid #CFD8DC;
+            margin: 10px 0;
+            height: 25px;
+        }
+
+        .drawing-area {
+            border: 1px solid #CFD8DC;
+            height: 100px;
+            margin: 10px 0;
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>LKPD PJOK • KELAS VIII • AKTIVITAS GERAK BERIRAMA</h1>
+            <p>Deep Learning & Pembelajaran Berdiferensiasi</p>
+        </div>
+
+        <!-- Bagian 6: LKPD -->
+        <div class="banner purple">6. LEMBAR KERJA PESERTA DIDIK (LKPD)</div>
+
+        <div class="lkpd-header">
+            <h2>🎶 💃 LEMBAR KERJA PESERTA DIDIK 🕺 🎶</h2>
+            <p>AKTIVITAS GERAK BERIRAMA | PJOK Kelas 8 | Fase D</p>
+            <p class="lkpd-quote">"Setiap Gerakan adalah Ekspresi Dirimu!"</p>
+        </div>
+
+        <table class="identity-table">
+            <tr>
+                <td>Nama:</td>
+                <td>________________________________</td>
+                <td>Kelas:</td>
+                <td>_______________</td>
+            </tr>
+            <tr>
+                <td>Tanggal:</td>
+                <td>________________________________</td>
+                <td>Kelompok:</td>
+                <td>_______________</td>
+            </tr>
+        </table>
+
+        <div class="section-header">👁 BAGIAN A — PENGAMATAN GERAK BERIRAMA</div>
+        <p>Amati demonstrasi gerak dari guru atau video, lalu isi tabel berikut dengan teliti:</p>
+        <table>
+            <tr>
+                <th style="width: 50px;">No</th>
+                <th>Nama Gerakan</th>
+                <th>Bagian Tubuh</th>
+                <th>Tempo Musik</th>
+                <th>Kesesuaian Irama</th>
+                <th>Catatan Observasiku</th>
+            </tr>
+            <tr><td style="text-align: center;">1</td><td></td><td></td><td></td><td>☐ Sangat Sesuai<br>☐ Cukup Sesuai<br>☐ Belum Sesuai</td><td></td></tr>
+            <tr><td style="text-align: center;">2</td><td></td><td></td><td></td><td>☐ Sangat Sesuai<br>☐ Cukup Sesuai<br>☐ Belum Sesuai</td><td></td></tr>
+            <tr><td style="text-align: center;">3</td><td></td><td></td><td></td><td>☐ Sangat Sesuai<br>☐ Cukup Sesuai<br>☐ Belum Sesuai</td><td></td></tr>
+            <tr><td style="text-align: center;">4</td><td></td><td></td><td></td><td>☐ Sangat Sesuai<br>☐ Cukup Sesuai<br>☐ Belum Sesuai</td><td></td></tr>
+            <tr><td style="text-align: center;">5</td><td></td><td></td><td></td><td>☐ Sangat Sesuai<br>☐ Cukup Sesuai<br>☐ Belum Sesuai</td><td></td></tr>
+        </table>
+
+        <p class="question">🔍 Dari 5 gerakan yang kamu amati, gerakan mana yang PALING SULIT? Mengapa?</p>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+
+        <div class="section-header orange">✅ BAGIAN B — CHECKLIST KOORDINASI GERAK</div>
+        <p>Beri tanda (☑) pada kolom yang PALING SESUAI dengan kemampuanmu saat ini. Jujur ya!</p>
+        <table>
+            <tr>
+                <th>Aspek Koordinasi Gerak</th>
+                <th style="background: #2E7D32;">⭐⭐⭐ Sudah Mahir</th>
+                <th style="background: #E65100;">⭐⭐ Sedang Berlatih</th>
+                <th style="background: #B71C1C;">⭐ Perlu Bantuan</th>
+            </tr>
+            <tr>
+                <td>Langkah kaki mengikuti irama (march, step touch)</td>
+                <td style="background: #C8E6C9; text-align: center;">☐</td>
+                <td style="background: #FFE0B2; text-align: center;">☐</td>
+                <td style="background: #FFCDD2; text-align: center;">☐</td>
+            </tr>
+            <tr>
+                <td>Ayunan tangan selaras dengan langkah kaki</td>
+                <td style="background: #C8E6C9; text-align: center;">☐</td>
+                <td style="background: #FFE0B2; text-align: center;">☐</td>
+                <td style="background: #FFCDD2; text-align: center;">☐</td>
+            </tr>
+            <tr>
+                <td>Keseimbangan tubuh saat berpindah arah</td>
+                <td style="background: #C8E6C9; text-align: center;">☐</td>
+                <td style="background: #FFE0B2; text-align: center;">☐</td>
+                <td style="background: #FFCDD2; text-align: center;">☐</td>
+            </tr>
+            <tr>
+                <td>Ketepatan gerak sesuai hitungan 1-8</td>
+                <td style="background: #C8E6C9; text-align: center;">☐</td>
+                <td style="background: #FFE0B2; text-align: center;">☐</td>
+                <td style="background: #FFCDD2; text-align: center;">☐</td>
+            </tr>
+            <tr>
+                <td>Gerak badan terlihat luwes dan rileks (tidak kaku)</td>
+                <td style="background: #C8E6C9; text-align: center;">☐</td>
+                <td style="background: #FFE0B2; text-align: center;">☐</td>
+                <td style="background: #FFCDD2; text-align: center;">☐</td>
+            </tr>
+            <tr>
+                <td>Sinkronisasi dengan gerakan teman sekelompok</td>
+                <td style="background: #C8E6C9; text-align: center;">☐</td>
+                <td style="background: #FFE0B2; text-align: center;">☐</td>
+                <td style="background: #FFCDD2; text-align: center;">☐</td>
+            </tr>
+            <tr>
+                <td>Perpindahan formasi / pola lantai yang teratur</td>
+                <td style="background: #C8E6C9; text-align: center;">☐</td>
+                <td style="background: #FFE0B2; text-align: center;">☐</td>
+                <td style="background: #FFCDD2; text-align: center;">☐</td>
+            </tr>
+            <tr>
+                <td>Ekspresi wajah positif dan percaya diri saat tampil</td>
+                <td style="background: #C8E6C9; text-align: center;">☐</td>
+                <td style="background: #FFE0B2; text-align: center;">☐</td>
+                <td style="background: #FFCDD2; text-align: center;">☐</td>
+            </tr>
+        </table>
+
+        <p class="question">💡 Tuliskan 2 aspek yang paling kamu banggakan dan 1 aspek yang ingin kamu tingkatkan:</p>
+        <p>Bangga: (1) __________________ (2) __________________ &nbsp;&nbsp;&nbsp;&nbsp; Ingin tingkatkan: __________________</p>
+
+        <div class="page-break"></div>
+
+        <div class="section-header purple">💗 BAGIAN C — REFLEKSI PERASAAN SETELAH BERGERAK</div>
+        <p>Pilih SATU wajah yang paling menggambarkan perasaanmu hari ini dengan melingkari pilihanmu:</p>
+
+        <div class="mood-selector">
+            <div class="mood-option happy">
+                <div class="emoji">😄</div>
+                <strong>SANGAT SENANG</strong>
+            </div>
+            <div class="mood-option good">
+                <div class="emoji">😊</div>
+                <strong>SENANG</strong>
+            </div>
+            <div class="mood-option neutral">
+                <div class="emoji">😐</div>
+                <strong>BIASA SAJA</strong>
+            </div>
+            <div class="mood-option low">
+                <div class="emoji">😕</div>
+                <strong>KURANG PD</strong>
+            </div>
+            <div class="mood-option bad">
+                <div class="emoji">😬</div>
+                <strong>SANGAT SULIT</strong>
+            </div>
+        </div>
+
+        <p class="question">🎯 Apa momen paling berkesan yang kamu alami dalam pembelajaran hari ini? Ceritakan!</p>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+
+        <p class="question">🤔 Gerakan apa yang paling menantang? Strategi apa yang kamu gunakan untuk mengatasinya?</p>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+
+        <p class="question">💪 Apa yang akan kamu lakukan berbeda jika bisa mengulang pelajaran ini dari awal?</p>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+
+        <p class="question">🤝 Bagaimana perasaanmu saat bergerak bersama kelompok? Adakah momen kerja sama yang berkesan?</p>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+
+        <p class="question">🧘 Setelah bergerak mengikuti irama, bagian tubuh mana yang paling kamu rasakan aktif bekerja?</p>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+
+        <div class="section-header green">🎨 BAGIAN D — TANTANGAN KREATIVITAS GERAK</div>
+
+        <div class="challenge-box">
+            <h3>🔥 TANTANGAN DANCE CHALLENGE KELOMPOK 🔥</h3>
+            <p>Bersama kelompokmu, ciptakan MINI DANCE CHALLENGE 2x8 hitungan yang UNIK & KREATIF!</p>
+            <p><strong>1.</strong> Gunakan MINIMAL 3 jenis gerakan berbeda (tangan, kaki, dan badan).</p>
+            <p><strong>2.</strong> SEMUA anggota bergerak serempak dan kompak.</p>
+            <p><strong>3.</strong> Pilih musikmu sendiri, sesuaikan gerakan dengan temponya.</p>
+            <p><strong>4.</strong> Tambahkan MINIMAL 1 gerakan kreatif ciptaan sendiri yang BELUM pernah ada!</p>
+            <p><strong>5.</strong> Beri nama dance challengemu yang keren dan mudah diingat.</p>
+        </div>
+
+        <p><strong>Nama Dance Challenge Kelompokku:</strong> "_________________________________"</p>
+        <p class="question"><strong>Rancangan Gerakan</strong> (deskripsi tiap hitungan atau sketsa gerakanmu!):</p>
+        <table>
+            <tr>
+                <th style="width: 80px;">Hitungan</th>
+                <th>Deskripsi / Sketsa Gerakan</th>
+                <th style="width: 50px;"></th>
+                <th style="width: 80px;">Hitungan</th>
+                <th>Deskripsi / Sketsa Gerakan</th>
+            </tr>
+            <tr>
+                <td style="text-align: center;">1</td>
+                <td></td>
+                <td></td>
+                <td style="text-align: center;">5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">2</td>
+                <td></td>
+                <td></td>
+                <td style="text-align: center;">6</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">3</td>
+                <td></td>
+                <td></td>
+                <td style="text-align: center;">7</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">4</td>
+                <td></td>
+                <td></td>
+                <td style="text-align: center;">8</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <p class="question">🗺 Rancangan Pola Lantai (gambar dan beri keterangan formasi kelompokmu!):</p>
+        <table>
+            <tr>
+                <td style="width: 50%;">
+                    <div class="drawing-area"></div>
+                    <p style="text-align: center; font-style: italic; color: #B0BEC5;">Area Gambar Pola Lantai</p>
+                </td>
+                <td style="width: 50%; vertical-align: top;">
+                    <p><strong>Keterangan Formasi:</strong></p>
+                    <p>A = ________________</p>
+                    <p>B = ________________</p>
+                    <p>C = ________________</p>
+                    <p>Arah gerak: ________________</p>
+                    <p>Jumlah hitungan: ______ x 8</p>
+                    <p>Tempo musik: __________ BPM</p>
+                </td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <div class="section-header gray">⭐ BAGIAN E — EVALUASI DIRI & RENCANA PERBAIKAN</div>
+        <p>Lingkari jumlah bintang yang sesuai (1=perlu banyak latihan, 5=sudah sangat bisa), lalu tulis rencanamu!</p>
+        <table>
+            <tr>
+                <th>Aspek yang Dinilai</th>
+                <th>Nilai Diri (lingkari)</th>
+                <th>Rencana Aksi Perbaikanku</th>
+            </tr>
+            <tr>
+                <td>Kemampuan mengikuti tempo musik</td>
+                <td style="background: #FFFDE7; text-align: center;">1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5</td>
+                <td>Saya akan ___________________</td>
+            </tr>
+            <tr>
+                <td>Koordinasi gerak tangan & kaki</td>
+                <td style="background: #FFFDE7; text-align: center;">1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5</td>
+                <td>Saya akan ___________________</td>
+            </tr>
+            <tr>
+                <td>Keluwesan dan kenyamanan bergerak</td>
+                <td style="background: #FFFDE7; text-align: center;">1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5</td>
+                <td>Saya akan ___________________</td>
+            </tr>
+            <tr>
+                <td>Kerja sama & sinkronisasi kelompok</td>
+                <td style="background: #FFFDE7; text-align: center;">1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5</td>
+                <td>Saya akan ___________________</td>
+            </tr>
+            <tr>
+                <td>Kepercayaan diri saat tampil</td>
+                <td style="background: #FFFDE7; text-align: center;">1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5</td>
+                <td>Saya akan ___________________</td>
+            </tr>
+            <tr>
+                <td>Kreativitas dalam variasi gerak</td>
+                <td style="background: #FFFDE7; text-align: center;">1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5</td>
+                <td>Saya akan ___________________</td>
+            </tr>
+            <tr>
+                <td>Disiplin mengikuti aturan pembelajaran</td>
+                <td style="background: #FFFDE7; text-align: center;">1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5</td>
+                <td>Saya akan ___________________</td>
+            </tr>
+        </table>
+
+        <div class="callout" style="border-color: #6A1B9A;">
+            <div class="callout-header" style="background: #6A1B9A;">💌 SURAT UNTUKKU SENDIRI</div>
+            <div class="callout-body" style="background: #F3E5F5;">
+                <p>Tuliskan satu kalimat penyemangat untuk dirimu sendiri tentang perjalanan belajar gerak beriramamu:</p>
+                <p><em>"Aku bangga karena _______________________________________________________________"</em></p>
+                <p><em>"Aku berjanji akan terus __________________________________________________________"</em></p>
+            </div>
+        </div>
+
+        <div class="banner teal-dark" style="font-size: 14pt;">🕺 Keep Moving, Keep Smiling, Keep Growing! 💃</div>
+        <p style="text-align: center; font-style: italic; color: #E0F2F1;">Setiap langkah yang kamu ambil, setiap hitungan yang kamu ikuti — itu semua adalah kemajuanmu!</p>
+
+        <!-- Footer -->
+        <div class="footer">
+            Pendidikan Jasmani, Olahraga & Kesehatan • SMP Kelas VIII • Fase D
+        </div>
+    </div>
+</body>
+</html>

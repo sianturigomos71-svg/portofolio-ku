@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Ajar PJOK - Kelas VIII</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #212121;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            padding: 20mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00796B;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 14pt;
+            color: #00796B;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 10pt;
+            color: #546E7A;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 2px solid #00796B;
+            margin-top: 20px;
+            font-size: 9pt;
+            color: #546E7A;
+        }
+
+        /* Banner */
+        .banner {
+            background: #00796B;
+            color: white;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-size: 16pt;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .banner.orange { background: #E65100; }
+        .banner.purple { background: #6A1B9A; }
+        .banner.blue { background: #1565C0; }
+        .banner.gray { background: #37474F; }
+        .banner.teal-dark { background: #004D40; }
+
+        /* Sub Banner */
+        .sub-banner {
+            background: #E0F2F1;
+            border-left: 5px solid #00796B;
+            padding: 12px 20px;
+            margin: 15px 0;
+            font-size: 13pt;
+            font-weight: bold;
+            color: #00796B;
+        }
+
+        .sub-banner.orange { background: #FFF3E0; border-left-color: #E65100; color: #E65100; }
+        .sub-banner.purple { background: #F3E5F5; border-left-color: #6A1B9A; color: #6A1B9A; }
+        .sub-banner.blue { background: #E3F2FD; border-left-color: #1565C0; color: #1565C0; }
+        .sub-banner.amber { background: #FFF8E1; border-left-color: #F57F17; color: #F57F17; }
+
+        /* Cover */
+        .cover-gradient {
+            display: flex;
+            height: 30px;
+            margin: 20px 0;
+        }
+
+        .cover-gradient div {
+            flex: 1;
+        }
+
+        .cover-title {
+            background: #00796B;
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .cover-title h2 {
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+
+        .cover-title h1 {
+            font-size: 24pt;
+            margin: 20px 0;
+        }
+
+        .cover-title p {
+            font-size: 12pt;
+            font-style: italic;
+            color: #FFF8E1;
+        }
+
+        /* Pillar Cards */
+        .pillar-cards {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .pillar-card {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid;
+        }
+
+        .pillar-card.teal { background: #E0F2F1; border-color: #00796B; }
+        .pillar-card.orange { background: #FFF3E0; border-color: #E65100; }
+        .pillar-card.purple { background: #F3E5F5; border-color: #6A1B9A; }
+
+        .pillar-card .emoji {
+            font-size: 28pt;
+            margin-bottom: 10px;
+        }
+
+        .pillar-card h3 {
+            font-size: 14pt;
+            margin-bottom: 5px;
+        }
+
+        .pillar-card h4 {
+            font-size: 11pt;
+            color: #546E7A;
+            margin-bottom: 10px;
+        }
+
+        .pillar-card p {
+            font-size: 10pt;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        th, td {
+            border: 1px solid #CFD8DC;
+            padding: 8px 12px;
+            vertical-align: top;
+        }
+
+        th {
+            background: #00796B;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        th.orange { background: #E65100; }
+        th.purple { background: #6A1B9A; }
+        th.blue { background: #1565C0; }
+        th.green { background: #2E7D32; }
+        th.gray { background: #37474F; }
+        th.amber { background: #F57F17; }
+        th.teal { background: #00796B; }
+
+        tr:nth-child(even) {
+            background: #ECEFF1;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        /* Numbered items */
+        .num-item {
+            margin: 8px 0;
+            padding-left: 10px;
+        }
+
+        /* Callout box */
+        .callout {
+            border: 2px solid #1565C0;
+            margin: 15px 0;
+        }
+
+        .callout-header {
+            background: #1565C0;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        .callout-body {
+            background: #E3F2FD;
+            padding: 15px;
+        }
+
+        .identity-table {
+            margin: 20px 0;
+        }
+
+        .identity-table td {
+            padding: 5px 10px;
+        }
+
+        .identity-table td:first-child {
+            font-weight: bold;
+            color: #6A1B9A;
+            width: 25%;
+        }
+
+        /* Signature */
+        .signature-table {
+            margin: 30px 0;
+        }
+
+        .signature-table td {
+            text-align: center;
+            padding: 15px;
+            border: none;
+        }
+
+        .signature-table .space {
+            height: 80px;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+                max-width: 100%;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        .page-break {
+            page-break-before: always;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>MODUL AJAR PJOK • KELAS VIII • AKTIVITAS GERAK BERIRAMA</h1>
+            <p>Deep Learning & Pembelajaran Berdiferensiasi</p>
+        </div>
+
+        <!-- Cover -->
+        <div class="cover-gradient">
+            <div style="background: #004D40;"></div>
+            <div style="background: #00796B;"></div>
+            <div style="background: #E65100;"></div>
+        </div>
+
+        <div class="cover-title">
+            <h2>MODUL AJAR</h2>
+            <h1>PENDIDIKAN JASMANI, OLAHRAGA & KESEHATAN</h1>
+            <p>★ AKTIVITAS GERAK BERIRAMA ★</p>
+            <p>Kelas VIII — Fase D — Kurikulum Merdeka</p>
+        </div>
+
+        <div class="pillar-cards">
+            <div class="pillar-card teal">
+                <div class="emoji">🧘</div>
+                <h3>MINDFUL</h3>
+                <h4>Kesadaran Penuh</h4>
+                <p>Fokus pada gerak, napas, irama & sinkronisasi diri</p>
+            </div>
+            <div class="pillar-card orange">
+                <div class="emoji">🌟</div>
+                <h3>MEANINGFUL</h3>
+                <h4>Bermakna</h4>
+                <p>Gerak dikaitkan budaya, kebugaran & kehidupan nyata</p>
+            </div>
+            <div class="pillar-card purple">
+                <div class="emoji">🎶</div>
+                <h3>JOYFUL</h3>
+                <h4>Penuh Kegembiraan</h4>
+                <p>Musik pop, tantangan gerak & kreativitas bebas</p>
+            </div>
+        </div>
+
+        <!-- Identity Table -->
+        <table class="identity-table">
+            <tr>
+                <td colspan="2" style="background: #004D40; color: white; text-align: center; font-weight: bold;">IDENTITAS MODUL</td>
+            </tr>
+            <tr>
+                <td>Mata Pelajaran</td>
+                <td>Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)</td>
+            </tr>
+            <tr>
+                <td>Kelas / Semester</td>
+                <td>VIII (Delapan) / Semester 1</td>
+            </tr>
+            <tr>
+                <td>Materi Pokok</td>
+                <td>Aktivitas Gerak Berirama</td>
+            </tr>
+            <tr>
+                <td>Alokasi Waktu</td>
+                <td>2 Pertemuan × 3 × 40 menit (Total 240 Menit)</td>
+            </tr>
+            <tr>
+                <td>Pendekatan</td>
+                <td>Deep Learning — Mindful, Meaningful, Joyful</td>
+            </tr>
+            <tr>
+                <td>Model Pembelajaran</td>
+                <td>Pembelajaran Berdiferensiasi (Konten, Proses, Produk)</td>
+            </tr>
+            <tr>
+                <td>Fase Kurikulum</td>
+                <td>Fase D — Kurikulum Merdeka</td>
+            </tr>
+            <tr>
+                <td>Sarana & Prasarana</td>
+                <td>Lapangan/Aula, Speaker, Pita, Bola Kecil, Proyektor/TV</td>
+            </tr>
+        </table>
+
+        <p style="margin: 20px 0;">
+            Dibuat oleh: ________________________________ &nbsp;&nbsp;&nbsp;&nbsp; NIP: ____________________________<br>
+            Sekolah: ____________________________________________ &nbsp;&nbsp;&nbsp;&nbsp; Tahun Pelajaran: _________
+        </p>
+
+        <div class="page-break"></div>
+
+        <!-- Bagian 1: Tujuan Pembelajaran -->
+        <div class="banner">1. TUJUAN PEMBELAJARAN</div>
+        <p>Tujuan pembelajaran dirumuskan berdasarkan Capaian Pembelajaran Fase D, mencakup tiga domain:</p>
+
+        <div class="sub-banner">🧠 A. Domain KOGNITIF — Pengetahuan & Pemahaman</div>
+        <ol class="num-item">
+            <li>Menganalisis hubungan antara gerak tubuh, irama musik, tempo, dan koordinasi dalam aktivitas gerak berirama.</li>
+            <li>Menjelaskan konsep keseimbangan, keluwesan, dan ketepatan tempo dalam rangkaian gerak berirama.</li>
+            <li>Mengidentifikasi unsur-unsur gerak berirama dalam kehidupan sehari-hari, seni, budaya, dan olahraga.</li>
+            <li>Membedakan gerak yang berirama dan tidak berirama berdasarkan pengamatan langsung.</li>
+        </ol>
+
+        <div class="sub-banner orange">🏋️ B. Domain PSIKOMOTOR — Keterampilan Gerak</div>
+        <ol class="num-item">
+            <li>Mempraktikkan langkah dasar (march, step touch, grapevine) dan ayunan tangan sesuai irama dengan koordinasi benar.</li>
+            <li>Melakukan rangkaian gerak berirama 2×8 hitungan dengan keluwesan, keseimbangan, dan ketepatan tempo.</li>
+            <li>Menggabungkan gerak tangan, kaki, dan badan secara harmonis sesuai tempo musik yang bervariasi.</li>
+            <li>Menampilkan kreasi gerak berirama berkelompok dengan variasi pola lantai dan ekspresi positif.</li>
+        </ol>
+
+        <div class="sub-banner purple">❤️ C. Domain AFEKTIF — Sikap & Karakter</div>
+        <ol class="num-item">
+            <li>Menunjukkan percaya diri saat mempraktikkan gerak berirama di depan guru dan teman sekelas.</li>
+            <li>Menerapkan kerja sama, komunikasi positif, dan saling menghargai dalam aktivitas gerak kelompok.</li>
+            <li>Menampilkan disiplin, tanggung jawab, dan semangat belajar aktif selama seluruh sesi pembelajaran.</li>
+            <li>Merespons umpan balik dari guru dan teman dengan sikap terbuka dan kemauan memperbaiki diri.</li>
+        </ol>
+
+        <div class="callout">
+            <div class="callout-header">🇮🇩 Profil Pelajar Pancasila yang Dikembangkan</div>
+            <div class="callout-body">
+                <table>
+                    <tr>
+                        <td style="background: #E0F2F1; text-align: center;"><strong>🤝 Bergotong Royong</strong><br>Kerja sama & sinkronisasi kelompok</td>
+                        <td style="background: #E3F2FD; text-align: center;"><strong>💪 Mandiri</strong><br>Evaluasi diri & motivasi gerak</td>
+                        <td style="background: #F3E5F5; text-align: center;"><strong>🎨 Kreatif</strong><br>Kreasi variasi gerak & pola lantai</td>
+                        <td style="background: #FFF3E0; text-align: center;"><strong>🌍 Bernalar Kritis</strong><br>Analisis gerak, tempo & koordinasi</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Bagian 2: Pendekatan Deep Learning -->
+        <div class="banner teal-dark">2. PENDEKATAN DEEP LEARNING</div>
+
+        <div class="sub-banner">🧘 A. MINDFUL — Kesadaran Penuh dalam Bergerak</div>
+        <p>Peserta didik dikembangkan kesadaran penuh (mindfulness) melalui:</p>
+        <ul>
+            <li>Memperhatikan setiap gerakan tubuh secara sadar: posisi tangan, pijakan kaki, dan orientasi tubuh.</li>
+            <li>Mengatur napas secara teratur dan sadar selaras dengan ritme musik yang dimainkan.</li>
+            <li>Mengenali dan membedakan tempo musik: lambat (60 BPM), sedang (90 BPM), dan cepat (120 BPM).</li>
+            <li>Merasakan sinkronisasi gerak antaranggota kelompok melalui kepekaan indera dan fokus kolektif.</li>
+            <li>Berlatih hadir penuh (present): meminimalkan distraksi dan merasakan kegembiraan gerak secara utuh.</li>
+            <li>Sesi jeda reflektif 30 detik di antara latihan untuk body scan sederhana (memindai perasaan tubuh).</li>
+        </ul>
+
+        <div class="sub-banner orange">🌟 B. MEANINGFUL — Pembelajaran yang Bermakna</div>
+        <p>Keterkaitan gerak berirama dengan dunia nyata peserta didik:</p>
+        <table>
+            <tr>
+                <th class="orange">Konteks Kehidupan</th>
+                <th class="orange">Relevansi dengan Gerak Berirama</th>
+            </tr>
+            <tr>
+                <td>🎵 Dance Challenge Media Sosial</td>
+                <td>Gerakan viral TikTok/Reels mengajarkan koordinasi, ekspresi, dan kreativitas gerak yang kontekstual bagi remaja.</td>
+            </tr>
+            <tr>
+                <td>🏃 Kebugaran & Kesehatan Tubuh</td>
+                <td>Gerak berirama membangun daya tahan kardiorespirasi, fleksibilitas sendi, dan koordinasi neuromuskular.</td>
+            </tr>
+            <tr>
+                <td>🎭 Seni & Budaya Indonesia</td>
+                <td>Elemen tari tradisional (Poco-Poco, Sajojo) mencerminkan identitas budaya yang relevan dengan gerak ritmis.</td>
+            </tr>
+            <tr>
+                <td>🤝 Kerja Sama Tim</td>
+                <td>Sinkronisasi gerak berkelompok melatih komunikasi non-verbal, kepercayaan, dan tanggung jawab kolektif.</td>
+            </tr>
+            <tr>
+                <td>🎓 Persiapan Porseni/Pentas Seni</td>
+                <td>Keterampilan gerak berirama menjadi modal untuk penampilan seni di sekolah dan lomba.</td>
+            </tr>
+        </table>
+
+        <div class="sub-banner purple">🎶 C. JOYFUL — Kegembiraan Intrinsik dalam Bergerak</div>
+        <ul>
+            <li>Menggunakan playlist musik populer remaja (K-Pop, Pop Indonesia, EDM ringan) yang energik dan familiar.</li>
+            <li>"Momen Bintang" di akhir sesi: setiap kelompok tampil 30 detik, mendapat tepuk tangan dan poin apresiasi.</li>
+            <li>Gamifikasi: sistem poin untuk ketepatan tempo, kekompakan, dan kreativitas gerak kelompok.</li>
+            <li>Variasi musik di setiap pertemuan agar tidak monoton dan mempertahankan antusiasme peserta.</li>
+            <li>Ruang kreasi bebas: peserta didik boleh menambahkan gerakan khas diri sendiri dalam kelompok.</li>
+            <li>Zero judgment zone: semua level kemampuan diapresiasi; kesalahan adalah bagian dari proses belajar.</li>
+            <li>"Freeze Dance" mini sebagai reward di akhir kegiatan inti untuk menciptakan momen joyful bersama.</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- Bagian 3: Asesmen Diagnostik -->
+        <div class="banner blue">3. ASESMEN DIAGNOSTIK AWAL</div>
+        <p>Guru memetakan kesiapan belajar SEBELUM kegiatan inti dimulai. Hasil digunakan untuk pengelompokan stasiun.</p>
+
+        <table>
+            <tr>
+                <th style="background: #00796B; width: 80px;">Q1</th>
+                <td>
+                    <strong>Pertanyaan Pemantik 1 — Pengalaman Awal</strong><br>
+                    <em>"Siapa yang pernah ikut senam, tari tradisional, atau dance challenge? Bagaimana rasanya?"</em><br>
+                    ▶ Tujuan: Memetakan pengalaman gerak berirama & kesiapan afektif peserta didik.
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th style="background: #E65100; width: 80px;">Q2</th>
+                <td>
+                    <strong>Pertanyaan Pemantik 2 — Kesadaran Tantangan Gerak</strong><br>
+                    <em>"Menurutmu, gerakan mana yang paling sulit dilakukan sesuai irama? Mengapa?"</em><br>
+                    ▶ Tujuan: Mengidentifikasi persepsi peserta didik tentang tantangan gerak dan memetakan kesiapan kognitif.
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th style="background: #6A1B9A; width: 80px;">Q3</th>
+                <td>
+                    <strong>Aktivitas Diagnostik 3 — Observasi Psikomotor Langsung</strong><br>
+                    <em>"Ikuti 8 hitungan gerakan sederhana yang Bapak/Ibu contohkan! Langkah kaki kanan dulu, ikuti temponya."</em><br>
+                    ▶ Tujuan: Observasi langsung koordinasi gerak, kepekaan tempo, dan level kesiapan psikomotor.
+                </td>
+            </tr>
+        </table>
+
+        <div class="sub-banner amber">📋 Panduan Pemetaan Hasil Diagnostik ke Level Stasiun</div>
+        <table>
+            <tr>
+                <th>Level</th>
+                <th>Ciri-Ciri yang Diamati</th>
+                <th>Penempatan Stasiun</th>
+            </tr>
+            <tr>
+                <td style="background: #E0F2F1; text-align: center;"><strong>🌱 PEMULA</strong></td>
+                <td>
+                    <ul>
+                        <li>Kesulitan mengikuti hitungan 1-8</li>
+                        <li>Gerakan kaki & tangan tidak sinkron</li>
+                        <li>Terlihat ragu-ragu & kurang percaya diri</li>
+                        <li>Belum pernah ikut senam/dance</li>
+                    </ul>
+                </td>
+                <td style="background: #E0F2F1;">Stasiun 1 — Fokus gerak dasar & langkah sederhana dengan tempo lambat dan panduan video.</td>
+            </tr>
+            <tr>
+                <td style="background: #FFF3E0; text-align: center;"><strong>🌿 MENENGAH</strong></td>
+                <td>
+                    <ul>
+                        <li>Dapat mengikuti langkah dasar</li>
+                        <li>Kesulitan pada kombinasi gerak tangan+kaki</li>
+                        <li>Kadang meleset dari irama saat perubahan gerak</li>
+                        <li>Pernah ikut senam/dance tingkat dasar</li>
+                    </ul>
+                </td>
+                <td style="background: #FFF3E0;">Stasiun 2 — Kombinasi gerak berirama dengan alat sederhana & tempo sedang.</td>
+            </tr>
+            <tr>
+                <td style="background: #E8F5E9; text-align: center;"><strong>🌳 MAHIR</strong></td>
+                <td>
+                    <ul>
+                        <li>Mengikuti irama dengan lancar & natural</li>
+                        <li>Menunjukkan ekspresi dan variasi gerak spontan</li>
+                        <li>Berinisiatif memimpin gerakan dalam kelompok</li>
+                        <li>Berpengalaman dalam tari/senam/dance</li>
+                    </ul>
+                </td>
+                <td style="background: #E8F5E9;">Stasiun 3 — Kreasi rangkaian gerak berkelompok dengan pola lantai & variasi tempo.</td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <!-- Bagian 4: Diferensiasi -->
+        <div class="banner purple">4. PEMBELAJARAN BERDIFERENSIASI</div>
+
+        <div class="sub-banner purple">📚 A. Diferensiasi KONTEN — Sumber Belajar Berjenjang</div>
+        <table>
+            <tr>
+                <th class="purple">Level</th>
+                <th class="purple">Media Utama</th>
+                <th class="purple">Konten Spesifik</th>
+                <th class="purple">Cara Akses</th>
+            </tr>
+            <tr>
+                <td style="background: #E0F2F1; text-align: center; vertical-align: middle;"><strong>🌱 PEMULA</strong></td>
+                <td style="background: #E0F2F1;">
+                    <strong>▶ Video Tutorial Gerak Dasar</strong><br>
+                    Langkah kaki (march + step touch) & ayunan tangan dengan tempo lambat 60-80 BPM. Narasi hitungan 1-8 jelas.
+                </td>
+                <td>
+                    <ul>
+                        <li>Gerakan dipecah per hitungan</li>
+                        <li>Demo dari depan & samping</li>
+                        <li>Durasi video 3-5 menit</li>
+                        <li>Dapat diputar berulang</li>
+                    </ul>
+                </td>
+                <td style="background: #E0F2F1;">TV/Proyektor kelas. Guru siapkan video offline.</td>
+            </tr>
+            <tr>
+                <td style="background: #FFF3E0; text-align: center; vertical-align: middle;"><strong>🌿 MENENGAH</strong></td>
+                <td style="background: #FFF3E0;">
+                    <strong>📋 Kartu Infografis Gerak</strong><br>
+                    Kombinasi gerak berirama: tangan+kaki+perpindahan arah. Disertai ikon posisi tubuh & arah gerak.
+                </td>
+                <td>
+                    <ul>
+                        <li>Kartu A4 dicetak berwarna</li>
+                        <li>Diagram posisi tubuh tiap hitungan</li>
+                        <li>Kode warna tangan vs kaki</li>
+                        <li>Panduan perubahan arah</li>
+                    </ul>
+                </td>
+                <td style="background: #FFF3E0;">Dicetak & dibagikan. Dijadikan panduan gerak mandiri.</td>
+            </tr>
+            <tr>
+                <td style="background: #E8F5E9; text-align: center; vertical-align: middle;"><strong>🌳 MAHIR</strong></td>
+                <td style="background: #E8F5E9;">
+                    <strong>🎬 Artikel + Video Analisis</strong><br>
+                    Analisis pola lantai, variasi tempo, dan kreativitas gerak berirama modern (senam ritmik, aerobik, street dance).
+                </td>
+                <td>
+                    <ul>
+                        <li>Video pertunjukan profesional</li>
+                        <li>Artikel teknik pola lantai</li>
+                        <li>Lembar analisis kritis</li>
+                        <li>Referensi variasi tempo</li>
+                    </ul>
+                </td>
+                <td style="background: #E8F5E9;">QR code ke sumber online. Peserta buat catatan kritis 5 poin.</td>
+            </tr>
+        </table>
+
+        <div class="sub-banner blue">🔄 B. Diferensiasi PROSES — Sistem Stasiun Belajar (Rotasi 15 Menit)</div>
+        <table>
+            <tr>
+                <th class="teal">STASIUN 1 — PEMULA</th>
+                <th class="orange">STASIUN 2 — MENENGAH</th>
+                <th class="purple">STASIUN 3 — MAHIR</th>
+            </tr>
+            <tr>
+                <td style="background: #E0F2F1;">
+                    <strong>🎯 FOKUS GERAK</strong><br>
+                    Langkah dasar: march, step touch, heel touch. Ayunan tangan dua arah.<br><br>
+                    <strong>🎵 MUSIK</strong><br>
+                    60-80 BPM. Hitungan 1-8 berulang. Guru memberi aba-aba lisan.<br><br>
+                    <strong>⚙️ AKTIVITAS</strong>
+                    <ul>
+                        <li>Ikuti video gerak dasar step-by-step</li>
+                        <li>Latihan berpasangan: saling koreksi</li>
+                        <li>Guru mendampingi & memberi umpan balik</li>
+                    </ul>
+                    <strong>🏅 TARGET</strong><br>
+                    Mampu lakukan 1x8 hitungan dengan benar.
+                </td>
+                <td style="background: #FFF3E0;">
+                    <strong>🎯 FOKUS GERAK</strong><br>
+                    Kombinasi: langkah berpindah arah + ayunan tangan + alat (pita/syal).<br><br>
+                    <strong>🎵 MUSIK</strong><br>
+                    80-100 BPM. Variasi 2x8 hitungan dengan perubahan arah.<br><br>
+                    <strong>⚙️ AKTIVITAS</strong>
+                    <ul>
+                        <li>Latihan dengan kartu infografis</li>
+                        <li>Eksplorasi gerak dengan alat (pita/syal)</li>
+                        <li>Diskusi kelompok: evaluasi koordinasi</li>
+                    </ul>
+                    <strong>🏅 TARGET</strong><br>
+                    Mampu lakukan 2x8 hitungan kombinasi.
+                </td>
+                <td style="background: #F3E5F5;">
+                    <strong>🎯 FOKUS GERAK</strong><br>
+                    Kreasi rangkaian gerak kelompok dengan pola lantai, variasi tempo, dan ekspresi.<br><br>
+                    <strong>🎵 MUSIK</strong><br>
+                    100-120 BPM. Dinamis dengan perubahan birama dan tempo.<br><br>
+                    <strong>⚙️ AKTIVITAS</strong>
+                    <ul>
+                        <li>Merancang pola lantai di kertas</li>
+                        <li>Kreasi 3-4 variasi gerakan unik kelompok</li>
+                        <li>Latihan penuh untuk demonstrasi akhir</li>
+                    </ul>
+                    <strong>🏅 TARGET</strong><br>
+                    Tampilkan kreasi 4x8 hitungan dengan pola lantai.
+                </td>
+            </tr>
+        </table>
+
+        <div class="sub-banner amber">🎬 C. Diferensiasi PRODUK — Demonstrasi Akhir</div>
+        <table>
+            <tr>
+                <th class="amber">Level</th>
+                <th class="amber">Bentuk Penampilan</th>
+                <th class="amber">Kriteria Keberhasilan</th>
+            </tr>
+            <tr>
+                <td style="background: #E0F2F1; text-align: center; vertical-align: middle;"><strong>🌱 PEMULA</strong></td>
+                <td>Rangkaian gerak dasar 2x8 hitungan mengikuti musik. Boleh berpasangan atau bertiga.</td>
+                <td style="background: #E0F2F1;">
+                    <ul>
+                        <li>Ketepatan langkah dasar</li>
+                        <li>Kesesuaian irama</li>
+                        <li>Keberanian tampil</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="background: #FFF3E0; text-align: center; vertical-align: middle;"><strong>🌿 MENENGAH</strong></td>
+                <td>Kombinasi gerak 3x8 hitungan dengan alat sederhana, perubahan arah minimal 2 kali.</td>
+                <td style="background: #FFF3E0;">
+                    <ul>
+                        <li>Koordinasi tangan-kaki-alat</li>
+                        <li>Keluwesan gerak</li>
+                        <li>Perubahan arah tepat</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="background: #E8F5E9; text-align: center; vertical-align: middle;"><strong>🌳 MAHIR</strong></td>
+                <td>Kreasi gerak kelompok 4x8 hitungan dengan pola lantai sendiri, variasi tempo, dan ekspresi.</td>
+                <td style="background: #E8F5E9;">
+                    <ul>
+                        <li>Kreativitas pola lantai</li>
+                        <li>Sinkronisasi kelompok</li>
+                        <li>Ekspresi & variasi tempo</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <!-- Bagian 5: Langkah Kegiatan -->
+        <div class="banner">5. LANGKAH KEGIATAN PEMBELAJARAN</div>
+
+        <div class="banner teal" style="font-size: 14pt;">📅 PERTEMUAN 1 — Eksplorasi & Pengenalan Gerak Berirama (3 × 40 Menit)</div>
+
+        <div class="sub-banner">🎬 A. PENDAHULUAN (15 Menit)</div>
+        <table>
+            <tr>
+                <th style="width: 60px;">No</th>
+                <th style="width: 100px;">Waktu</th>
+                <th>Deskripsi Kegiatan Guru & Peserta Didik</th>
+            </tr>
+            <tr>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">3 mnt</td>
+                <td>PEMBUKAAN: Guru mengucapkan salam, memimpin doa bersama, dan mengecek kehadiran. Peserta didik berbaris rapi di lapangan dengan jarak aman.</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">4 mnt</td>
+                <td>ICE BREAKING DANCE CHALLENGE: Guru memutar lagu populer dan memimpin 8 hitungan gerak sederhana yang fun. Peserta didik menirukan dengan bebas dan penuh semangat. Suasana dibangun ceria dan bebas penilaian.</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">3</td>
+                <td style="text-align: center;">3 mnt</td>
+                <td>APERSEPSI: Guru bertanya, 'Gerakan tadi terasa mudah atau sulit mengikuti iramanya? Kenapa?' Peserta berbagi pengalaman. Guru mengaitkan dengan kehidupan nyata (TikTok dance, senam pagi).</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">4</td>
+                <td style="text-align: center;">3 mnt</td>
+                <td>PENYAMPAIAN TUJUAN: Guru menjelaskan tujuan pembelajaran hari ini secara singkat dan jelas. Menyampaikan alur kegiatan dan aturan stasiun belajar.</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">5</td>
+                <td style="text-align: center;">2 mnt</td>
+                <td>ASESMEN DIAGNOSTIK: Guru mengajukan Q1 dan Q2 secara lisan, mengamati respons, lalu meminta seluruh kelas mengikuti 8 hitungan gerak (Q3) sambil mencatat observasi.</td>
+            </tr>
+        </table>
+
+        <div class="sub-banner orange">⚡ B. KEGIATAN INTI (95 Menit) — Diferensiasi Stasiun</div>
+        <table>
+            <tr>
+                <th style="width: 60px;">No</th>
+                <th style="width: 100px;">Waktu</th>
+                <th>Deskripsi Kegiatan</th>
+            </tr>
+            <tr>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">5 mnt</td>
+                <td>PENGELOMPOKAN: Guru membagi peserta didik ke 3 kelompok berdasarkan hasil diagnostik. Menjelaskan tugas tiap stasiun, target gerak, dan aturan rotasi dengan bahasa jelas dan singkat.</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">75 mnt</td>
+                <td>SESI STASIUN BELAJAR (3 stasiun berjalan serentak): Stasiun 1 (Pemula): Mengikuti video gerak dasar, latihan berpasangan, guru mendampingi. Stasiun 2 (Menengah): Eksplorasi kombinasi gerak dengan infografis & alat, diskusi kelompok. Stasiun 3 (Mahir): Merancang pola lantai & kreasi gerak kelompok, latihan penuh. Guru berpindah ke tiap stasiun setiap 5 menit untuk observasi & umpan balik.</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">3</td>
+                <td style="text-align: center;">10 mnt</td>
+                <td>JEDA REFLEKTIF: Guru menghentikan semua aktivitas. Musik dimatikan. Guru mengajukan 3 pertanyaan reflektif deep learning. Peserta diskusi berpasangan, lalu sharing ke kelas.</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">4</td>
+                <td style="text-align: center;">5 mnt</td>
+                <td>MINI PENAMPILAN: Satu perwakilan tiap stasiun menampilkan 1x8 hitungan gerak. Seluruh kelas memberikan apresiasi tepuk tangan. Guru memberi umpan balik positif & konstruktif.</td>
+            </tr>
+        </table>
+
+        <div class="callout">
+            <div class="callout-header">💬 Pertanyaan Reflektif Deep Learning — Pertemuan 1</div>
+            <div class="callout-body">
+                <p><strong>1.</strong> <em>"Mengapa gerakan HARUS mengikuti tempo musik? Apa yang terjadi jika tidak mengikutinya?"</em></p>
+                <p><strong>2.</strong> <em>"Apa yang terjadi pada kelompok jika satu orang tidak sinkron? Bagaimana solusinya?"</em></p>
+                <p><strong>3.</strong> <em>"Bagaimana perasaan tubuhmu setelah bergerak mengikuti irama? Bagian mana yang paling bekerja keras?"</em></p>
+            </div>
+        </div>
+
+        <div class="sub-banner purple">🌙 C. PENUTUP (10 Menit)</div>
+        <ul>
+            <li>PENDINGINAN: Peregangan ringan seluruh tubuh diiringi musik instrumental lembut selama 3 menit. Guru mengajak peserta merasakan relaksasi otot secara sadar (mindful stretching).</li>
+            <li>REFLEKSI EXIT TICKET: Peserta menyampaikan satu hal berkesan: 'Saya belajar bahwa...' Guru mencatat poin menarik dari respons peserta.</li>
+            <li>PENGUATAN & MOTIVASI: Guru mengapresiasi seluruh kelas atas usaha dan semangat. Menyampaikan bahwa pertemuan berikutnya ada sesi demonstrasi dan kreasi yang lebih seru.</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <div class="banner orange" style="font-size: 14pt;">📅 PERTEMUAN 2 — Pendalaman, Kreasi & Demonstrasi Akhir (3 × 40 Menit)</div>
+
+        <div class="sub-banner orange">🎬 A. PENDAHULUAN (15 Menit)</div>
+        <ul>
+            <li>REVIEW: Guru bertanya, 'Siapa yang masih ingat 3 gerakan dasar dari pertemuan lalu?' Peserta berbagi jawaban secara cepat.</li>
+            <li>ICE BREAKING ROTATE: Satu peserta memimpin 4 hitungan gerak favoritnya, bergantian 3 peserta. Kelas mengikuti dengan semangat.</li>
+            <li>MOTIVASI: Guru menyampaikan bahwa hari ini adalah sesi puncak: kreasi dan demonstrasi. 'Kalian sudah berlatih keras, sekarang saatnya bersinar!'</li>
+            <li>TEKNIS: Guru menjelaskan aturan demonstrasi akhir, rubrik penilaian, dan alokasi waktu penampilan tiap kelompok.</li>
+        </ul>
+
+        <div class="sub-banner">⚡ B. KEGIATAN INTI (95 Menit)</div>
+        <table>
+            <tr>
+                <th style="width: 60px;">No</th>
+                <th style="width: 100px;">Waktu</th>
+                <th>Deskripsi Kegiatan</th>
+            </tr>
+            <tr>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">40 mnt</td>
+                <td>STASIUN LANJUTAN: Peserta kembali ke stasiun masing-masing untuk sesi latihan terakhir. Fokus pada aspek yang perlu diperbaiki berdasarkan refleksi pertemuan 1. Guru memberi umpan balik individual yang spesifik: tempo, koordinasi, dan ekspresi.</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">25 mnt</td>
+                <td>LATIHAN KOLABORATIF: Kelompok Pemula + Menengah saling menonton dan memberi umpan balik konstruktif: 'Satu hal yang kamu lakukan dengan baik adalah... Satu saran perbaikan adalah...' Kelompok Mahir menyempurnakan pola lantai.</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">3</td>
+                <td style="text-align: center;">30 mnt</td>
+                <td>SESI DEMONSTRASI AKHIR: Tiap kelompok tampil sesuai level. Penonton mengisi lembar peer assessment sederhana dan memberi apresiasi. Guru mengobservasi dan mencatat skor pada rubrik penilaian.</td>
+            </tr>
+        </table>
+
+        <div class="sub-banner purple">🌙 C. PENUTUP (10 Menit)</div>
+        <ul>
+            <li>PENDINGINAN MINDFUL: Peregangan seluruh tubuh dengan musik instrumental. Guru mengajak peserta merasakan setiap regangan secara sadar.</li>
+            <li>REFLEKSI AKHIR: Peserta mengisi Bagian E LKPD (Evaluasi Diri). 3-4 peserta berbagi refleksi singkat kepada kelas.</li>
+            <li>PENGUATAN KONSEP: Guru merangkum poin kunci: koordinasi, tempo, kerja sama, dan ekspresi diri melalui gerak.</li>
+            <li>PENUTUP: Guru mengapresiasi partisipasi aktif seluruh peserta. Doa penutup bersama.</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- Bagian 7: Rubrik Asesmen -->
+        <div class="banner teal-dark">7. RUBRIK ASESMEN SUMATIF</div>
+
+        <div class="sub-banner">📊 A. Rubrik Penilaian Demonstrasi Akhir — Skala 1-4</div>
+        <table>
+            <tr>
+                <th style="background: #004D40;">Aspek Penilaian</th>
+                <th style="background: #2E7D32;">4 — Sangat Baik</th>
+                <th style="background: #00796B;">3 — Baik</th>
+                <th style="background: #E65100;">2 — Cukup</th>
+                <th style="background: #B71C1C;">1 — Perlu Bimbingan</th>
+            </tr>
+            <tr>
+                <td><strong>1. Ketepatan Tempo</strong></td>
+                <td>Selalu mengikuti tempo musik dengan sangat tepat sepanjang penampilan.</td>
+                <td>Sebagian besar (>75%) gerakan tepat sesuai tempo.</td>
+                <td>Tepat tempo hanya pada bagian tertentu (<50%).</td>
+                <td>Belum mampu menyesuaikan gerak dengan tempo.</td>
+            </tr>
+            <tr>
+                <td><strong>2. Koordinasi Gerak</strong></td>
+                <td>Tangan, kaki, dan tubuh terkoordinasi sempurna tanpa kesalahan berarti.</td>
+                <td>Koordinasi baik dengan 1-2 kesalahan minor.</td>
+                <td>Koordinasi belum konsisten; sering tidak sesuai.</td>
+                <td>Koordinasi sangat kurang; tangan & kaki tidak sinkron.</td>
+            </tr>
+            <tr>
+                <td><strong>3. Keluwesan Gerak</strong></td>
+                <td>Gerakan sangat luwes, natural, dan penuh ekspresi.</td>
+                <td>Gerakan cukup luwes dengan sedikit kekakuan ringan.</td>
+                <td>Gerakan masih terlihat kaku dan kurang rileks.</td>
+                <td>Gerakan sangat kaku dan terlihat tegang.</td>
+            </tr>
+            <tr>
+                <td><strong>4. Kerja Sama & Sinkronisasi</strong></td>
+                <td>Seluruh anggota kelompok bergerak serentak dan sinkron sempurna.</td>
+                <td>Sebagian besar (>75%) gerakan sinkron.</td>
+                <td>Sering terjadi ketidaksinkronan antar anggota.</td>
+                <td>Tidak ada sinkronisasi; tiap anggota bergerak sendiri.</td>
+            </tr>
+            <tr>
+                <td><strong>5. Ekspresi & Kepercayaan Diri</strong></td>
+                <td>Ekspresi sangat positif, penuh energi, dan sangat percaya diri.</td>
+                <td>Percaya diri dengan ekspresi yang baik dan konsisten.</td>
+                <td>Ekspresi kurang; masih terlihat ragu-ragu.</td>
+                <td>Sangat tidak percaya diri; ekspresi tegang.</td>
+            </tr>
+            <tr>
+                <td><strong>6. Kreativitas (Mahir)</strong></td>
+                <td>Variasi gerak sangat kreatif, pola lantai menarik & inovatif.</td>
+                <td>Ada kreativitas cukup jelas dalam variasi & formasi.</td>
+                <td>Kreativitas terbatas; variasi gerakan minimal.</td>
+                <td>Tidak ada variasi kreatif; hanya meniru gerak dasar.</td>
+            </tr>
+            <tr>
+                <td colspan="5" style="background: #E0F2F1; text-align: center;">
+                    <strong>Nilai Akhir = (Total Skor / 24) × 100</strong><br>
+                    <em>Catatan: Aspek ke-6 HANYA untuk kelompok Stasiun Mahir.</em>
+                </td>
+            </tr>
+        </table>
+
+        <div class="sub-banner blue">📋 B. Lembar Observasi Guru — Asesmen Proses</div>
+        <table>
+            <tr>
+                <th style="background: #1565C0;">No. Absen</th>
+                <th style="background: #1565C0;">Level</th>
+                <th style="background: #1565C0;">Catatan Observasi Proses Belajar</th>
+                <th style="background: #1565C0;">Umpan Balik Diberikan</th>
+            </tr>
+            <tr><td style="text-align: center;">1</td><td style="text-align: center;"><em>P/M/A</em></td><td></td><td></td></tr>
+            <tr><td style="text-align: center;">2</td><td style="text-align: center;"><em>P/M/A</em></td><td></td><td></td></tr>
+            <tr><td style="text-align: center;">3</td><td style="text-align: center;"><em>P/M/A</em></td><td></td><td></td></tr>
+            <tr><td style="text-align: center;">4</td><td style="text-align: center;"><em>P/M/A</em></td><td></td><td></td></tr>
+            <tr><td style="text-align: center;">5</td><td style="text-align: center;"><em>P/M/A</em></td><td></td><td></td></tr>
+            <tr><td style="text-align: center;">6</td><td style="text-align: center;"><em>P/M/A</em></td><td></td><td></td></tr>
+            <tr><td style="text-align: center;">7</td><td style="text-align: center;"><em>P/M/A</em></td><td></td><td></td></tr>
+            <tr><td style="text-align: center;">8</td><td style="text-align: center;"><em>P/M/A</em></td><td></td><td></td></tr>
+        </table>
+        <p style="font-style: italic; font-size: 9pt;">P = Pemula &nbsp;&nbsp;&nbsp;&nbsp; M = Menengah &nbsp;&nbsp;&nbsp;&nbsp; A = Mahir (Advanced)</p>
+
+        <div class="sub-banner amber">🎯 C. Rekap Nilai & Catatan Akhir</div>
+        <table>
+            <tr>
+                <th style="background: #F57F17;">Nama Peserta Didik</th>
+                <th style="background: #F57F17;">Nilai Akhir (/100)</th>
+                <th style="background: #F57F17;">Catatan & Rekomendasi Guru</th>
+            </tr>
+            <tr><td>___________________________</td><td style="text-align: center;">______</td><td>____________________________</td></tr>
+            <tr><td>___________________________</td><td style="text-align: center;">______</td><td>____________________________</td></tr>
+            <tr><td>___________________________</td><td style="text-align: center;">______</td><td>____________________________</td></tr>
+            <tr><td>___________________________</td><td style="text-align: center;">______</td><td>____________________________</td></tr>
+            <tr><td>___________________________</td><td style="text-align: center;">______</td><td>____________________________</td></tr>
+            <tr><td>___________________________</td><td style="text-align: center;">______</td><td>____________________________</td></tr>
+        </table>
+
+        <table class="signature-table">
+            <tr>
+                <td>
+                    Mengetahui,<br><br><br>
+                    <strong>Kepala Sekolah</strong><br>
+                    <div class="space"></div>
+                    ( ______________________________ )<br>
+                    NIP. ___________________________
+                </td>
+                <td>
+                    _______________, ___ ________ 20___<br><br><br>
+                    <strong>Guru Mata Pelajaran PJOK</strong><br>
+                    <div class="space"></div>
+                    ( ______________________________ )<br>
+                    NIP. ___________________________
+                </td>
+            </tr>
+        </table>
+
+        <!-- Footer -->
+        <div class="footer">
+            Pendidikan Jasmani, Olahraga & Kesehatan • SMP Kelas VIII • Fase D
+        </div>
+    </div>
+</body>
+</html>
